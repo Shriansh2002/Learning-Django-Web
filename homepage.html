@@ -1,0 +1,27 @@
+{% extends 'questions/index.html' %}
+
+{% block content %}
+
+<div class="text-gray-500 bg-gray-900 body-font" 
+	style="width: 500px;padding: 20px;margin-left: 25;">
+
+	<h2 style="text-align: center;">
+		<b style="font-size: 25px; color: yellow;">QUESTIONS</b>
+	</h2>
+
+	{% if question_list %}
+		<ul>
+			{% for question in question_list %}
+				<li> 
+					<a href="{% url 'questions:detailed_view' question.id %}">{{question.question_by_user}}
+					</a> <br><br>
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No Questions In The List</p>
+	{% endif %}
+</div>
+<hr><br><br><br>
+
+{% endblock %}

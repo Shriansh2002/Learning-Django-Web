@@ -1,0 +1,16 @@
+{% extends 'questions/index.html' %}
+
+{% block content %}
+
+	<b style="margin-left: 25px">
+		<h1>{{ question.question_by_user }}</h1>
+	</b>
+
+	<ul>
+	{% for choice in question.options_set.all %}
+	    <li>{{ choice.choice_options }}</li>
+	{% endfor %}
+	</ul>
+
+
+{% endblock %}
